@@ -1,0 +1,64 @@
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://proleed.academy/exercises/quality-assurance-qa/account-opening-form-for-practice.php");
+		
+		Select prefix= new Select(driver.findElement(By.id("prefix")));		
+		
+		prefix.selectByIndex(1);
+		
+		driver.findElement(By.id("firstname")).sendKeys("fname");
+		driver.findElement(By.id("lastname")).sendKeys("lname");
+		
+		driver.findElement(By.id("pension")).click();
+		driver.findElement(By.name("fathername")).sendKeys("father");
+		driver.findElement(By.name("mothername")).sendKeys("mothrt");
+		driver.findElement(By.id("studentid")).click();
+		
+		driver.findElement(By.id("identity_number")).sendKeys("123");
+		driver.findElement(By.id("female")).click();
+		
+		
+		Select month= new Select(driver.findElement(By.id("dob_month")));		
+		
+		month.selectByVisibleText("December");
+		
+		Select date= new Select(driver.findElement(By.id("dob_date")));		
+		
+		date.selectByVisibleText("25");
+		
+		Select year= new Select(driver.findElement(By.id("dob_year")));		
+		
+		year.selectByVisibleText("1985");
+		
+		
+		driver.findElement(By.id("single")).click();
+		
+		
+		Select countrycode= new Select(driver.findElement(By.id("country_code")));		
+		
+		countrycode.selectByVisibleText("Australia (+61)");
+		
+		
+		
+		driver.findElement(By.id("mobile")).sendKeys("1358498");
+		Select nationality= new Select(driver.findElement(By.id("nationality")));		
+		
+		nationality.selectByVisibleText("American");
+		
+		
+		driver.findElement(By.name("address")).sendKeys("myadd");
+		driver.findElement(By.id("state")).sendKeys("punjab");
+		
+		
+		Select country= new Select(driver.findElement(By.id("country")));		
+		
+		country.selectByVisibleText("Antarctica");
+		
+		
+		
+		
+		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/form/div[15]/div[2]/input")).click();
+	}
+
+}
